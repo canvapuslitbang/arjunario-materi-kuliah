@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pertemuan 2 - Konsep Dasar AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      color: #0d6efd;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #084298;
+    }
+    .comment {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pertemuan 2</h1>
+  <h2>Konsep Dasar Artificial Intelligence</h2>
+
+  <div class="box">
+    <h3>Tujuan Pembelajaran</h3>
+    <p>Mahasiswa memahami konsep dan jenis-jenis Artificial Intelligence.</p>
+  </div>
+
+  <div class="box">
+    <h3>Materi</h3>
+    <p>
+      Konsep dasar AI meliputi kemampuan mesin untuk belajar dari data
+      dan mengambil keputusan secara otomatis.
+    </p>
+
+    <ul>
+      <li><strong>Machine Learning:</strong> Sistem belajar dari data</li>
+      <li><strong>Deep Learning:</strong> Machine Learning dengan neural network</li>
+      <li><strong>Data:</strong> Komponen utama dalam AI</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>Jenis AI</h3>
+    <ul>
+      <li>Narrow AI</li>
+      <li>General AI</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>Soal Latihan</h3>
+    <ol>
+      <li>Jelaskan apa yang dimaksud dengan Machine Learning!</li>
+      <li>Mengapa data sangat penting dalam Artificial Intelligence?</li>
+    </ol>
+  </div>
+
+  <!-- KOLOM KOMENTAR -->
+  <div class="box">
+    <h3>Komentar Mahasiswa</h3>
+
+    <input type="text" id="nama" placeholder="Nama Mahasiswa">
+    <textarea id="komentar" rows="4" placeholder="Tulis komentar atau jawaban..."></textarea>
+    <button onclick="kirimKomentar()">Kirim Komentar</button>
+
+    <div id="daftarKomentar"></div>
+  </div>
+
+  <a href="index.html">⬅ Kembali ke Halaman Utama</a>
+
+  <script>
+    function kirimKomentar() {
+      const nama = document.getElementById("nama").value;
+      const komentar = document.getElementById("komentar").value;
+
+      if (nama === "" || komentar === "") {
+        alert("Nama dan komentar harus diisi!");
+        return;
+      }
+
+      const div = document.createElement("div");
+      div.className = "comment";
+      div.innerHTML = "<strong>" + nama + "</strong><br>" + komentar;
+
+      document.getElementById("daftarKomentar").appendChild(div);
+
+      document.getElementById("nama").value = "";
+      document.getElementById("komentar").value = "";
+    }
+  </script>
+
+</body>
+</html>

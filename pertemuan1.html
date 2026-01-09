@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pertemuan 1 - Pengantar AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      color: #0d6efd;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #084298;
+    }
+    .comment {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pertemuan 1</h1>
+  <h2>Pengantar Kecerdasan Buatan</h2>
+
+  <div class="box">
+    <h3>Tujuan Pembelajaran</h3>
+    <p>Mahasiswa memahami pengertian dan konsep dasar Artificial Intelligence.</p>
+  </div>
+
+  <div class="box">
+    <h3>Materi</h3>
+    <p>
+      Artificial Intelligence (AI) adalah cabang ilmu komputer yang mempelajari
+      bagaimana membuat mesin mampu berpikir dan bertindak seperti manusia.
+    </p>
+    <p>
+      AI digunakan dalam berbagai bidang seperti pendidikan, kesehatan,
+      transportasi, dan industri.
+    </p>
+  </div>
+
+  <div class="box">
+    <h3>Contoh Penerapan AI</h3>
+    <ul>
+      <li>Chatbot</li>
+      <li>Asisten Virtual</li>
+      <li>Pengenalan Wajah</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>Soal Latihan</h3>
+    <ol>
+      <li>Jelaskan pengertian Artificial Intelligence!</li>
+      <li>Sebutkan 3 contoh penerapan AI dalam kehidupan sehari-hari!</li>
+    </ol>
+  </div>
+
+  <!-- KOLOM KOMENTAR -->
+  <div class="box">
+    <h3>Komentar Mahasiswa</h3>
+
+    <input type="text" id="nama" placeholder="Nama Mahasiswa">
+    <textarea id="komentar" rows="4" placeholder="Tulis jawaban atau komentar..."></textarea>
+    <button onclick="kirimKomentar()">Kirim Komentar</button>
+
+    <div id="daftarKomentar"></div>
+  </div>
+
+  <a href="index.html">⬅ Kembali ke Halaman Utama</a>
+
+  <script>
+    function kirimKomentar() {
+      const nama = document.getElementById("nama").value;
+      const komentar = document.getElementById("komentar").value;
+
+      if (nama === "" || komentar === "") {
+        alert("Nama dan komentar harus diisi!");
+        return;
+      }
+
+      const div = document.createElement("div");
+      div.className = "comment";
+      div.innerHTML = "<strong>" + nama + "</strong><br>" + komentar;
+
+      document.getElementById("daftarKomentar").appendChild(div);
+
+      document.getElementById("nama").value = "";
+      document.getElementById("komentar").value = "";
+    }
+  </script>
+
+</body>
+</html>
