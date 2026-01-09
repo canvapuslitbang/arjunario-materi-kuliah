@@ -1,47 +1,116 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Website Materi Perkuliahan</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Website Perkuliahan</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Website Materi Perkuliahan</h1>
-    <p>Web Programming</p>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#home">Website Perkuliahan</a>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#materi">Materi</a>
-    <a href="tugas.html">Tugas</a>
-    <a href="#tentang">Tentang</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#home" id="menuHome">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#materi" id="menuMateri">Materi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
-<section id="home">
-    <h2>Selamat Datang</h2>
-    <p>Website ini berisi materi perkuliahan Web Programming.</p>
+<!-- HOME -->
+<section id="home" class="text-white text-center py-5 bg-primary">
+  <div class="container">
+    <h1 class="fw-bold">Website Materi Perkuliahan</h1>
+    <p class="lead fst-italic">"Belajar Tanpa Batas, Sukses Tanpa Henti!"</p>
+
+    <p class="mt-4 col-md-8 mx-auto">
+      Website ini digunakan sebagai media pembelajaran.
+      Mahasiswa dapat mengakses materi dan tugas perkuliahan
+      secara online melalui website ini.
+    </p>
+  </div>
 </section>
 
-<section id="materi">
-    <h2>Daftar Materi</h2>
-    <ul>
-        <li>Pertemuan 1: Pengenalan Web</li>
-        <li>Pertemuan 2: HTML Dasar</li>
-        <li>Pertemuan 3: CSS Dasar</li>
-        <li>Pertemuan 4: JavaScript Dasar</li>
-    </ul>
+<!-- MATERI (AWALNYA DISembunyikan) -->
+<section id="materi" class="container my-5" style="display:none;">
+  <h2 class="text-center mb-4 fw-bold">Materi Perkuliahan</h2>
+
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5>Pertemuan 1</h5>
+          <p>Pengantar Kecerdasan Buatan</p>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="materi/pertemuan1.html" class="btn btn-primary w-100">Buka Materi</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5>Pertemuan 2</h5>
+          <p>Konsep Dasar Artificial Intelligence</p>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="materi/pertemuan2.html" class="btn btn-primary w-100">Buka Materi</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<section id="tentang">
-    <h2>Tentang Website</h2>
-    <p>Dibuat untuk keperluan pembelajaran mata kuliah Web Programming.</p>
-</section>
-
-<footer>
-    <p>© 2026 - Web Programming</p>
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <small>© 2026 | ARJUNA RIO SAPUTRA MAHMUD</small>
 </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- LOGIC HOME & MATERI -->
+<script>
+  const menuHome = document.getElementById("menuHome");
+  const menuMateri = document.getElementById("menuMateri");
+  const materi = document.getElementById("materi");
+
+  menuMateri.addEventListener("click", function () {
+    materi.style.display = "block";
+    menuHome.classList.remove("active");
+    menuMateri.classList.add("active");
+  });
+
+  menuHome.addEventListener("click", function () {
+    materi.style.display = "none";
+    menuMateri.classList.remove("active");
+    menuHome.classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
 
 </body>
 </html>
