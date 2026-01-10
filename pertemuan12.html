@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pertemuan 12 - Etika & Implementasi AI</title>
+<style>
+body{font-family:Arial;margin:30px;background:#f8f9fa}
+h1{color:#0d6efd}
+.box{background:white;padding:20px;border-radius:8px;margin-bottom:20px}
+textarea,input{width:100%;padding:10px;margin:8px 0;border-radius:5px;border:1px solid #ccc}
+button{background:#0d6efd;color:white;border:none;padding:10px 15px;border-radius:5px}
+button:hover{background:#084298}
+.comment{background:#f1f1f1;padding:10px;border-radius:5px;margin-top:10px}
+</style>
+</head>
+<body>
+
+<h1>Pertemuan 12</h1>
+<h2>Etika dan Implementasi Artificial Intelligence</h2>
+
+<div class="box">
+<h3>Tujuan Pembelajaran</h3>
+<p>Mahasiswa memahami etika dan dampak penggunaan AI.</p>
+</div>
+
+<div class="box">
+<h3>Materi</h3>
+<p>Etika AI berkaitan dengan keadilan, privasi, dan tanggung jawab penggunaan teknologi.</p>
+</div>
+
+<div class="box">
+<h3>Isu Etika</h3>
+<ul>
+<li>Bias Algoritma</li>
+<li>Privasi Data</li>
+<li>Dampak Sosial</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>Soal Latihan</h3>
+<ol>
+<li>Mengapa etika penting dalam AI?</li>
+<li>Sebutkan risiko penggunaan AI!</li>
+</ol>
+</div>
+
+<div class="box">
+<h3>Komentar Mahasiswa</h3>
+<input id="nama"><textarea id="komentar"></textarea>
+<button onclick="kirim()">Kirim Komentar</button>
+<div id="daftarKomentar"></div>
+</div>
+
+<a href="index.html">⬅ Kembali ke Halaman Utama</a>
+
+<script>
+function kirim(){
+if(nama.value==""||komentar.value==""){alert("Tidak boleh kosong");return}
+daftarKomentar.innerHTML+=`<div class="comment"><b>${nama.value}</b><br>${komentar.value}</div>`;
+nama.value=komentar.value="";
+}
+</script>
+
+</body>
+</html>

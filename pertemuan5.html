@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pertemuan 5 - Problem Solving & Search</title>
+<style>
+body{font-family:Arial;margin:30px;background:#f8f9fa}
+h1{color:#0d6efd}
+.box{background:white;padding:20px;border-radius:8px;margin-bottom:20px}
+textarea,input{width:100%;padding:10px;margin:8px 0;border-radius:5px;border:1px solid #ccc}
+button{background:#0d6efd;color:white;border:none;padding:10px 15px;border-radius:5px;cursor:pointer}
+button:hover{background:#084298}
+.comment{background:#f1f1f1;padding:10px;border-radius:5px;margin-top:10px}
+</style>
+</head>
+<body>
+
+<h1>Pertemuan 5</h1>
+<h2>Problem Solving dan Search</h2>
+
+<div class="box">
+<h3>Tujuan Pembelajaran</h3>
+<p>Mahasiswa memahami konsep pemecahan masalah dan pencarian dalam AI.</p>
+</div>
+
+<div class="box">
+<h3>Materi</h3>
+<p>Problem solving dalam AI dilakukan dengan mencari solusi terbaik dari sebuah masalah menggunakan algoritma pencarian.</p>
+</div>
+
+<div class="box">
+<h3>Konsep Penting</h3>
+<ul>
+<li>Problem Solving Agent</li>
+<li>State Space</li>
+<li>Search Strategy</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>Soal Latihan</h3>
+<ol>
+<li>Apa yang dimaksud dengan state space?</li>
+<li>Jelaskan peran search strategy!</li>
+</ol>
+</div>
+
+<div class="box">
+<h3>Komentar Mahasiswa</h3>
+<input id="nama"><textarea id="komentar"></textarea>
+<button onclick="kirim()">Kirim Komentar</button>
+<div id="daftarKomentar"></div>
+</div>
+
+<a href="index.html">⬅ Kembali ke Halaman Utama</a>
+
+<script>
+function kirim(){
+if(nama.value==""||komentar.value==""){alert("Nama dan komentar harus diisi!");return}
+daftarKomentar.innerHTML+=`<div class="comment"><b>${nama.value}</b><br>${komentar.value}</div>`;
+nama.value=komentar.value="";
+}
+</script>
+
+</body>
+</html>
